@@ -1,6 +1,9 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, fakeAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { StakaterServiceService } from './stakater-service.service';
+import * as Rx from 'rxjs';
+import { delay } from "rxjs/operators";
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -10,7 +13,9 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent
-      ],
+      ]
+      // ],
+      // providers: [StakaterServiceService]
     }).compileComponents();
   });
 
@@ -32,4 +37,17 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('stackater-frontend app is running!');
   });
+
+  // it('should fetch greetings', fakeAsync(() => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const app = fixture.componentInstance;
+  //   const service = fixture.debugElement.injector.get(StakaterServiceService);
+  //   let data = spyOn(service, 'getGreetings').and.callFake(() => {
+  //     return Rx.of('Hello').pipe(delay(100));
+  //   });
+  //   app.getGreetings();
+  //   expect(app.greetings).toContain('Hello');
+    
+  // }));
+  
 });

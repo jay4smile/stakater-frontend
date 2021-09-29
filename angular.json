@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "stackater-frontend"
+    }
+  },
+  "defaultProject": "stackater-frontend",
+  "cli": {
+    "analytics": "7a9d456a-455a-4edf-9e43-4d3c9e94a20c"
+  }
 }
